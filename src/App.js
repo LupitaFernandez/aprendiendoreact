@@ -1,11 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './assets/img/logo.svg';
+import './assets/css/App.css';
+
+//Importar componentes
+import MiComponente from './components/MiComponente';
+
+function HolaMundo (nombre){
+  var presentacion = (
+    <div>
+        <h2>Bienvenido, soy {nombre}</h2>
+        <h3>Soy desarrolladora web junior</h3>
+    </div>);
+  return presentacion;
+}
 
 function App() {
   var nombre = "Guadalupe";
-  var presentacion = <h2>Bienvenido, soy {nombre}</h2>
-
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -13,16 +24,18 @@ function App() {
         <p>
           Hola Mundo !
         </p>
-        {presentacion}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        {HolaMundo (nombre)}
+
+        <section className='componentes'>
+
+        <MiComponente />
+
+        </section>
+
       </header>
+
+
     </div>
   );
 }
